@@ -1,0 +1,3658 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+/* ===== JobTrack Theme ===== */
+:root {
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: #381932;
+  background: #FFF3E6;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #FFF3E6;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a,
+label {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: #381932;
+}
+
+/* ===== Main Layout ===== */
+.app {
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  position: fixed;
+  inset: 0 auto 0 0;
+  padding: 30px 20px;
+  background: #381932;
+  color: #FFF3E6;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-right: 1px solid #53334D;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  width: fit-content;
+  margin: 0 0 38px;
+  color: #FFF3E6;
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: -1.35px;
+  line-height: 1;
+}
+
+.logo-mark {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  margin-right: 8px;
+  border: 1px solid #F2B36D;
+  border-radius: 11px 11px 11px 4px;
+  background: linear-gradient(145deg, #F2B36D, #D98949);
+  color: #381932 !important;
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  box-shadow: 0 4px 12px #170b161f;
+}
+
+.logo-word {
+  color: #FFF3E6 !important;
+  font-weight: 900;
+}
+
+.logo-dot {
+  color: #F2B36D !important;
+  font-size: 32px;
+  margin-left: -2px;
+  transform: translateY(-2px);
+}
+
+.nav-label,
+.eyebrow {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.nav-label {
+  margin: 0 10px 8px;
+  color: #C9AEBF;
+}
+
+.sidebar a {
+  color: #E6D4DF;
+  text-decoration: none;
+  padding: 13px 14px;
+  border-radius: 9px;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.sidebar a:hover {
+  background: #4B2A43;
+}
+
+.sidebar a.nav-active {
+  background: #59374F;
+  color: #FFF3E6;
+  border-left: 4px solid #F2B36D;
+  font-weight: 700;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #D4BDCD;
+  padding: 12px;
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 42px;
+  max-width: 1700px;
+}
+
+/* ===== Header ===== */
+.page-header,
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: #8B667F;
+}
+
+h1 {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: -1px;
+  color: #381932;
+}
+
+.page-header p,
+.muted {
+  color: #896F82;
+  font-size: 13px;
+}
+
+.page-header .muted {
+  margin-bottom: 0;
+}
+
+/* ===== Buttons ===== */
+.primary-button {
+  border: 0;
+  border-radius: 9px;
+  padding: 12px 17px;
+  background: #381932;
+  color: #FFF3E6;
+  font-weight: 650;
+  font-size: 13px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.primary-button:hover {
+  background: #59304F;
+  transform: translateY(-1px);
+}
+
+.secondary-button {
+  display: inline-block;
+  border: 1px solid #D9BFCF;
+  background: #FFF9F2;
+  color: #381932;
+  border-radius: 8px;
+  padding: 9px 11px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.text-button,
+.close-button {
+  background: transparent;
+  border: 0;
+  color: #70405F;
+  font-size: 12px;
+}
+
+.text-button.danger {
+  color: #B34343;
+}
+
+/* ===== Dashboard Statistics ===== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 32px 0;
+}
+
+.stat-card {
+  background: #FFFAF4;
+  border: 1px solid #F0DFD3;
+  border-radius: 13px;
+  padding: 23px;
+  box-shadow: 0 3px 12px #38193208;
+}
+
+.stat-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+.blue {
+  color: #70405F;
+  background: #F1E1E9;
+}
+
+.amber {
+  color: #B66A2B;
+  background: #FFE9D0;
+}
+
+.green {
+  color: #387653;
+  background: #E1EEDC;
+}
+
+.stat-card p {
+  color: #896F82;
+  font-size: 13px;
+  margin: 15px 0 8px;
+}
+
+.stat-card h2 {
+  margin: 0;
+  font-size: 29px;
+  color: #381932;
+}
+
+/* ===== Application Panel ===== */
+.panel {
+  background: #FFFAF4;
+  border: 1px solid #F0DFD3;
+  border-radius: 14px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 14px #38193206;
+}
+
+.section-heading h2 {
+  font-size: 19px;
+  margin: 0;
+  color: #381932;
+}
+
+.section-heading p {
+  margin-bottom: 0;
+}
+
+.toolbar {
+  display: flex;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.toolbar input,
+.toolbar select,
+.application-form input,
+.application-form select,
+.application-form textarea {
+  min-width: 0;
+  width: 100%;
+  border: 1px solid #E8D5CB;
+  border-radius: 9px;
+  padding: 12px;
+  outline: none;
+  color: #381932;
+  background: #FFFCF8;
+}
+
+.toolbar input {
+  flex: 1;
+}
+
+.toolbar select {
+  width: 155px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #A18B9B;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #8A5A7C;
+  box-shadow: 0 0 0 3px #38193212;
+}
+
+/* ===== Empty State ===== */
+.empty-state {
+  text-align: center;
+  padding: 45px 15px;
+}
+
+.empty-icon {
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #F1E1E9;
+  color: #381932;
+  font-size: 24px;
+}
+
+.empty-state h3 {
+  margin: 17px 0 8px;
+  color: #381932;
+}
+
+.empty-state p {
+  color: #896F82;
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+/* ===== Application Cards ===== */
+.application-list {
+  display: grid;
+  gap: 12px;
+}
+
+.application-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 18px 0;
+  border-top: 1px solid #F0DFD3;
+}
+
+.company-avatar {
+  flex: 0 0 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  background: #F1E1E9;
+  color: #381932;
+  border-radius: 11px;
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.application-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.application-info h3 {
+  margin: 0 0 5px;
+  font-size: 15px;
+  color: #381932;
+}
+
+.application-info p {
+  margin: 5px 0;
+  font-size: 13px;
+  color: #796276;
+  overflow-wrap: anywhere;
+}
+
+.application-info small {
+  color: #9B8495;
+  font-size: 11px;
+}
+
+.application-info details {
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+.application-info summary {
+  cursor: pointer;
+  color: #70405F;
+}
+
+.description {
+  white-space: pre-wrap;
+}
+
+.application-info > a,
+.resume-row a {
+  display: inline-block;
+  font-size: 12px;
+  margin: 10px 10px 0 0;
+}
+
+.resume-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  white-space: nowrap;
+  background: #F1E1E9;
+  color: #70405F;
+}
+
+.status-interview {
+  background: #FFE9D0;
+  color: #92521C;
+}
+
+.status-offer {
+  background: #E1EEDC;
+  color: #387653;
+}
+
+.status-rejected {
+  background: #FBE5E3;
+  color: #B34343;
+}
+
+.status-assessment {
+  background: #EDE5F7;
+  color: #72519A;
+}
+
+.application-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+/* ===== Interview List ===== */
+.interview-panel > .muted {
+  margin-top: 22px;
+}
+
+.interview-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-top: 1px solid #F0DFD3;
+  padding: 15px 0;
+}
+
+.date-tile {
+  width: 48px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  background: #F1E1E9;
+  color: #381932;
+  display: grid;
+  place-items: center;
+  padding: 7px;
+}
+
+.date-tile strong {
+  font-size: 19px;
+}
+
+.date-tile span {
+  font-size: 11px;
+}
+
+.interview-item > div:nth-child(2) {
+  flex: 1;
+}
+
+.interview-item p {
+  margin: 4px 0 0;
+}
+
+/* ===== Add / Edit Modal ===== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px 15px;
+  background: #241020A8;
+}
+
+.application-form {
+  width: 100%;
+  max-width: 650px;
+  margin: auto;
+  background: #FFF3E6;
+  border: 1px solid #E8D5CB;
+  border-radius: 15px;
+  padding: 27px;
+  box-shadow: 0 20px 70px #24102030;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+
+.form-heading h2 {
+  margin: 0;
+  font-size: 21px;
+  color: #381932;
+}
+
+.form-heading p {
+  margin-bottom: 0;
+}
+
+.close-button {
+  font-size: 19px;
+}
+
+.application-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #59394F;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+/* ===== Responsive Layout ===== */
+@media (max-width: 900px) {
+  .sidebar {
+    width: 190px;
+  }
+
+  .main-content {
+    margin-left: 190px;
+    padding: 28px 20px;
+  }
+
+  .stats {
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 650px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    padding: 15px;
+    border-right: 0;
+    border-bottom: 1px solid #53334D;
+  }
+
+  .sidebar .logo {
+    margin: 0 0 10px;
+  }
+
+  .sidebar nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .nav-label,
+  .sidebar-footer {
+    display: none;
+  }
+
+  .app {
+    display: block;
+  }
+
+  .main-content {
+    margin: 0;
+    padding: 22px 14px;
+  }
+
+  .page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    margin: 22px 0;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+  }
+
+  .application-card {
+    flex-wrap: wrap;
+  }
+
+  .application-actions {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-left: 57px;
+  }
+
+  .toolbar {
+    flex-direction: column;
+  }
+
+  .toolbar select {
+    width: 100%;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .application-form {
+    padding: 19px;
+  }
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.header-actions input[type="file"] {
+  display: none;
+}
+
+.header-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+.add-options-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.add-option-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ead5df;
+  border-radius: 12px;
+  background: #fffbf7;
+  color: #381932;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.add-option-card:hover {
+  border-color: #381932;
+  transform: translateY(-2px);
+}
+
+.add-option-card strong {
+  font-size: 16px;
+}
+
+.add-option-card span {
+  color: #887386;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.upload-option {
+  box-sizing: border-box;
+}
+
+
+/* JobTrack UI polish: responsive layout, cleaner application cards, rounded headings */
+:root {
+  font-family: "Nunito", "Segoe UI", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+html,
+body,
+#root,
+.app {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.main-content {
+  width: calc(100% - 250px);
+  max-width: none;
+  min-width: 0;
+  margin-left: 250px;
+  padding: 42px clamp(20px, 4vw, 64px);
+  border: 0;
+}
+
+.page-header h1 {
+  font-family: "Nunito", "Trebuchet MS", sans-serif;
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: -1.8px;
+  line-height: 1.08;
+}
+
+.page-header .eyebrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+
+/* Each application gets its own clean card and consistent internal layout. */
+.application-list {
+  gap: 16px;
+}
+
+.application-card {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid #f0dfd3;
+  border-radius: 15px;
+  background: #fffdf9;
+  box-shadow: 0 4px 14px #38193208;
+  scroll-margin-top: 24px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.application-card:target,
+.application-card.application-highlight {
+  border-color: #b98ba8;
+  box-shadow: 0 0 0 3px #38193212, 0 6px 18px #3819320d;
+}
+
+.company-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+}
+
+.application-info {
+  min-width: 0;
+}
+
+.application-info h3 {
+  font-size: 17px;
+  font-weight: 850;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.application-info > p:first-of-type {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 650;
+  color: #70405f;
+}
+
+.application-info small {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.application-info details {
+  margin-top: 14px;
+  padding: 12px 14px;
+}
+
+/* Final layout fixes */
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow-x: clip;
+}
+
+.app {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.sidebar {
+  flex: 0 0 250px;
+  border-right: 0;
+}
+
+.main-content {
+  flex: 1 1 auto;
+  width: auto;
+  max-width: none;
+  min-width: 0;
+  margin-left: 250px;
+  overflow: visible;
+}
+
+.application-card {
+  min-width: 0;
+}
+
+.application-info {
+  overflow-wrap: anywhere;
+}
+
+.application-info details[open] {
+  background: #fff8f0;
+  border: 1px solid #f0dfd3;
+  border-radius: 10px;
+}
+
+.application-info .description {
+  margin-top: 10px;
+  line-height: 1.7;
+  font-size: 13px;
+  color: #60465c;
+  overflow-wrap: anywhere;
+}
+
+.application-actions {
+  min-width: 76px;
+}
+
+.interview-item {
+  border-top: 1px solid #f0dfd3;
+}
+
+.interview-item > button {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.page-header .muted {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    flex-basis: 190px;
+  }
+
+  .main-content {
+    width: auto;
+    margin-left: 190px;
+    padding: 28px 20px;
+  }
+
+  .application-card {
+    grid-template-columns: 42px minmax(0, 1fr);
+  }
+
+  .application-actions {
+    grid-column: 2;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .app {
+    display: block;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    border-right: 0;
+    border-bottom: 0;
+  }
+
+  .main-content {
+    width: 100%;
+    margin-left: 0;
+    padding: 22px 14px;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2.1rem, 10vw, 3rem);
+    letter-spacing: -1.2px;
+  }
+
+  .application-card {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .company-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .application-actions {
+    grid-column: 1 / -1;
+    padding-left: 0;
+  }
+
+  .interview-item {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .interview-item > div:nth-child(2) {
+    min-width: 0;
+  }
+
+  .interview-item > button {
+    margin-left: 63px;
+  }
+}
+
+
+/* Screenshot import: compact modal with clipboard paste support */
+.add-options-modal {
+  width: min(100%, 620px);
+  max-width: 620px;
+  gap: 14px;
+  padding: 24px;
+}
+
+.add-options-modal .form-heading {
+  margin-bottom: 0;
+}
+
+.add-options-modal .form-heading h2 {
+  font-size: 22px;
+  font-weight: 850;
+  letter-spacing: -0.5px;
+}
+
+.add-option-card {
+  padding: 14px 16px;
+  gap: 5px;
+}
+
+.add-option-card strong,
+.paste-screenshot-copy strong {
+  font-size: 14px;
+  font-weight: 850;
+  color: #381932;
+}
+
+.add-option-card span,
+.paste-screenshot-copy span {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #896f82;
+}
+
+.paste-screenshot-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid #ead5df;
+  border-radius: 12px;
+  background: #fffaf5;
+  padding: 15px;
+}
+
+.paste-screenshot-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.paste-drop-area {
+  min-height: 112px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  padding: 15px;
+  text-align: center;
+  border: 1.5px dashed #c8a8bd;
+  border-radius: 10px;
+  background: #fffdf9;
+  color: #70405f;
+  cursor: text;
+  outline: none;
+}
+
+.paste-drop-area:focus {
+  border-color: #70405f;
+  box-shadow: 0 0 0 3px #38193212;
+}
+
+.paste-icon {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: #f1e1e9;
+  color: #381932;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.paste-drop-area > span:nth-child(2) {
+  font-size: 12px;
+}
+
+.paste-count {
+  color: #896f82;
+  font-size: 11px;
+}
+
+.paste-screenshot-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.screenshot-choose {
+  cursor: pointer;
+  margin: 0;
+}
+
+.paste-screenshot-actions .primary-button {
+  margin-left: auto;
+}
+
+.add-options-modal button:disabled,
+.add-options-modal label:has(input:disabled) {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.add-options-modal kbd {
+  display: inline-block;
+  padding: 1px 5px;
+  border: 1px solid #decbd6;
+  border-radius: 4px;
+  background: #fffdf9;
+  color: #381932;
+  font: inherit;
+  font-size: 11px;
+}
+
+.extraction-note {
+  margin: 0;
+  font-size: 12px;
+}
+
+@media (max-width: 650px) {
+  .add-options-modal {
+    padding: 18px;
+  }
+
+  .paste-screenshot-actions {
+    align-items: stretch;
+  }
+
+  .paste-screenshot-actions .primary-button {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+
+/* Screenshot thumbnails shown before AI extraction */
+.screenshot-preview-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.screenshot-preview-heading {
+  color: #70405f;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.screenshot-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+  gap: 10px;
+}
+
+.screenshot-preview-item {
+  position: relative;
+  min-width: 0;
+  padding: 6px;
+  border: 1px solid #ead5df;
+  border-radius: 9px;
+  background: #fffdf9;
+  overflow: hidden;
+}
+
+.screenshot-preview-item img {
+  display: block;
+  width: 100%;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 5px;
+  background: #f5e9e1;
+}
+
+.screenshot-preview-item > span {
+  display: block;
+  margin-top: 5px;
+  padding-right: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #896f82;
+  font-size: 10px;
+}
+
+.screenshot-remove-button {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #ead5df;
+  border-radius: 50%;
+  background: #fffaf5;
+  color: #70405f;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.screenshot-remove-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* Compact application form: fit on one desktop screen without modal scrolling */
+.modal-backdrop:has(> .application-form:not(.add-options-modal)) {
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 12px;
+}
+
+.application-form:not(.add-options-modal) {
+  width: min(100%, 940px);
+  max-width: 940px;
+  max-height: calc(100dvh - 24px);
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 18px 22px;
+  gap: 9px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-content: start;
+}
+
+.application-form:not(.add-options-modal) .form-heading,
+.application-form:not(.add-options-modal) .form-actions {
+  grid-column: 1 / -1;
+}
+
+.application-form:not(.add-options-modal) .form-grid {
+  grid-column: 1 / -1;
+}
+
+.application-form:not(.add-options-modal) .form-heading {
+  margin-bottom: 0;
+  align-items: center;
+}
+
+.application-form:not(.add-options-modal) .form-heading h2 {
+  font-size: 20px;
+}
+
+.application-form:not(.add-options-modal) label {
+  min-width: 0;
+  gap: 4px;
+  font-size: 11px;
+}
+
+.application-form:not(.add-options-modal) input,
+.application-form:not(.add-options-modal) select,
+.application-form:not(.add-options-modal) textarea {
+  min-width: 0;
+  padding: 8px 10px;
+  font-size: 12px;
+  border-radius: 7px;
+}
+
+.application-form:not(.add-options-modal) .form-grid {
+  gap: 10px;
+}
+
+.application-form:not(.add-options-modal) label:has(textarea[name="description"]),
+.application-form:not(.add-options-modal) label:has(textarea[name="notes"]),
+.application-form:not(.add-options-modal) label:has(input[type="file"]) {
+  min-width: 0;
+}
+
+.application-form:not(.add-options-modal) textarea[name="description"],
+.application-form:not(.add-options-modal) textarea[name="notes"] {
+  height: 62px;
+  min-height: 62px;
+  resize: vertical;
+}
+
+.application-form:not(.add-options-modal) label:has(input[type="file"]) small {
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+.application-form:not(.add-options-modal) .form-actions {
+  margin-top: 0;
+  padding-top: 2px;
+}
+
+@media (max-height: 760px) and (min-width: 651px) {
+  .application-form:not(.add-options-modal) {
+    padding: 12px 18px;
+    gap: 6px;
+  }
+
+  .application-form:not(.add-options-modal) textarea[name="description"],
+  .application-form:not(.add-options-modal) textarea[name="notes"] {
+    height: 48px;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 650px) {
+  .modal-backdrop:has(> .application-form:not(.add-options-modal)) {
+    align-items: flex-start;
+    overflow-y: auto;
+    padding: 10px;
+  }
+
+  .application-form:not(.add-options-modal) {
+    grid-template-columns: minmax(0, 1fr);
+    max-height: none;
+    overflow: visible;
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .application-form:not(.add-options-modal) .form-heading,
+  .application-form:not(.add-options-modal) .form-actions {
+    grid-column: 1;
+  }
+
+  .application-form:not(.add-options-modal) .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Make the native calendar picker easy to access */
+.application-form input[type="date"] {
+  position: relative;
+  cursor: pointer;
+  min-height: 44px;
+  color-scheme: light;
+}
+
+.application-form input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 1;
+  width: 18px;
+  height: 18px;
+}
+
+
+/* Left-align job descriptions */
+.application-info details,
+.application-info details .description {
+  text-align: left;
+}
+
+.application-info details .description {
+  white-space: pre-wrap;
+  line-height: 1.7;
+}
+
+.application-info details .description ul,
+.application-info details .description ol {
+  padding-left: 24px;
+}
+
+/* Job application card: clean, left-aligned layout */
+.application-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 20px;
+  text-align: left;
+  padding: 24px;
+}
+
+/* Hide the company initial avatar */
+.application-card .company-avatar {
+  display: none;
+}
+
+/* Align company and job details to the left */
+.application-card .application-info {
+  text-align: left;
+  min-width: 0;
+}
+
+.application-card .application-info h3,
+.application-card .application-info > p,
+.application-card .application-info > small,
+.application-card .application-info details,
+.application-card .application-info .resume-row {
+  text-align: left;
+}
+
+/* Put status and actions neatly on the right */
+.application-card .application-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+/* Modern Edit and Delete buttons */
+.application-card .application-actions .text-button {
+  padding: 8px 14px;
+  border: 1px solid #ead5e2;
+  border-radius: 9px;
+  background: #fffaf6;
+  color: #381932;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.application-card .application-actions .text-button:hover {
+  background: #f2e2eb;
+  transform: translateY(-1px);
+}
+
+.application-card .application-actions .text-button.danger {
+  color: #b42336;
+  border-color: #f0cbd0;
+}
+
+.application-card .application-actions .text-button.danger:hover {
+  background: #fff0f0;
+}
+
+/* Keep cards usable on narrow screens */
+@media (max-width: 650px) {
+  .application-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .application-card .application-actions {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+
+
+/* =========================================================
+   FINAL APPLICATION CARD REDESIGN
+   Clean, structured layout with left-aligned job details
+   ========================================================= */
+
+.application-list {
+  display: grid;
+  gap: 16px;
+}
+
+.application-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 18px 24px;
+  padding: 22px 24px;
+  border: 1px solid #f0dfd3;
+  border-radius: 16px;
+  background: #fffdf9;
+  box-shadow: 0 4px 16px rgba(56, 25, 50, 0.035);
+  text-align: left;
+  min-width: 0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.application-card:hover {
+  border-color: #dfc3d3;
+  box-shadow: 0 8px 24px rgba(56, 25, 50, 0.065);
+}
+
+.application-card:target,
+.application-card.application-highlight {
+  border-color: #b98ba8;
+  box-shadow: 0 0 0 3px rgba(56, 25, 50, 0.07);
+  scroll-margin-top: 24px;
+}
+
+/* Hide the single-letter company avatar */
+.application-card .company-avatar {
+  display: none !important;
+}
+
+/* Main job details */
+.application-card .application-info {
+  min-width: 0;
+  width: 100%;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.application-card .application-info h3 {
+  margin: 0 0 7px;
+  color: #381932;
+  font-size: 17px;
+  font-weight: 850;
+  line-height: 1.4;
+  letter-spacing: -0.25px;
+  text-align: left;
+}
+
+.application-card .application-info p {
+  margin: 5px 0;
+  color: #796276;
+  font-size: 13px;
+  line-height: 1.55;
+  text-align: left;
+}
+
+.application-card .application-info > p:first-of-type {
+  color: #70405f;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.application-card .application-info small {
+  display: inline-block;
+  margin: 6px 0 10px;
+  color: #9b8495;
+  font-size: 11px;
+  text-align: left;
+}
+
+/* Job description section */
+.application-card .application-info details {
+  margin: 14px 0 10px;
+  padding: 0;
+  font-size: 12px;
+  text-align: left;
+}
+
+.application-card .application-info details[open] {
+  padding: 13px 15px;
+  border: 1px solid #f0dfd3;
+  border-radius: 10px;
+  background: #fff8f0;
+}
+
+.application-card .application-info summary {
+  color: #70405f;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: left;
+}
+
+.application-card .application-info .description {
+  margin-top: 10px;
+  color: #60465c;
+  font-size: 13px;
+  line-height: 1.7;
+  text-align: left;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.application-card .application-info .description ul,
+.application-card .application-info .description ol {
+  padding-left: 22px;
+}
+
+/* Job URL and resume controls */
+.application-card .application-info > a,
+.application-card .resume-row a {
+  display: inline-block;
+  margin: 8px 12px 0 0;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.application-card .resume-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 13px;
+  border-top: 1px solid #f3e5dc;
+}
+
+.application-card .resume-row .secondary-button {
+  margin: 0;
+}
+
+/* Status and action buttons sit together on the right */
+.application-card .application-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 9px;
+  min-width: 104px;
+  padding-left: 16px;
+  border-left: 1px solid #f3e5dc;
+}
+
+.application-card .application-actions .status {
+  align-self: flex-end;
+  margin-bottom: 5px;
+}
+
+.application-card .application-actions .text-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 38px;
+  padding: 8px 13px;
+  border: 1px solid #ead5e2;
+  border-radius: 10px;
+  background: #fffaf6;
+  color: #381932;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.application-card .application-actions .text-button:hover {
+  background: #f4e7ee;
+  border-color: #d9b9cd;
+  transform: translateY(-1px);
+}
+
+.application-card .application-actions .text-button.danger {
+  color: #b42336;
+  border-color: #f0cbd0;
+  background: #fffaf8;
+}
+
+.application-card .application-actions .text-button.danger:hover {
+  background: #fff0f0;
+  border-color: #e9aeb5;
+}
+
+/* Responsive card layout */
+@media (max-width: 900px) {
+  .application-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+    padding: 19px;
+  }
+
+  .application-card .application-actions {
+    grid-column: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    min-width: 0;
+    padding: 13px 0 0;
+    border-left: 0;
+    border-top: 1px solid #f3e5dc;
+  }
+
+  .application-card .application-actions .status {
+    align-self: center;
+    margin: 0 8px 0 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .application-card {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .application-card .application-info h3 {
+    font-size: 16px;
+  }
+
+  .application-card .application-actions {
+    gap: 8px;
+  }
+
+  .application-card .application-actions .text-button {
+    min-height: 36px;
+    padding: 8px 11px;
+  }
+
+  .application-card .resume-row {
+    align-items: flex-start;
+  }
+}
+
+/* FINAL OVERRIDE: cleaner application cards without the vertical divider */
+.application-list {
+  display: grid;
+  gap: 16px;
+}
+
+.application-card {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: start;
+  column-gap: 24px;
+  row-gap: 14px;
+  padding: 22px 24px !important;
+  border: 1px solid #f0dfd3 !important;
+  border-radius: 16px !important;
+  background: #fffdf9 !important;
+  box-shadow: 0 4px 14px rgba(56, 25, 50, 0.035) !important;
+  text-align: left;
+}
+
+.application-card .company-avatar {
+  display: none !important;
+}
+
+.application-card .application-info {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  text-align: left !important;
+}
+
+.application-card .application-info h3,
+.application-card .application-info p,
+.application-card .application-info small,
+.application-card .application-info details,
+.application-card .application-info .description {
+  text-align: left !important;
+}
+
+.application-card .application-info h3 {
+  margin: 0 0 7px;
+  font-size: 18px;
+  font-weight: 850;
+  line-height: 1.35;
+}
+
+.application-card .application-info > p:first-of-type {
+  margin: 0 0 9px;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.application-card .application-info > small {
+  display: block;
+  margin: 0 0 14px;
+  font-size: 12px;
+}
+
+.application-card .application-info details {
+  margin: 12px 0;
+  padding: 0;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.application-card .application-info details[open] {
+  margin-top: 12px;
+  padding: 13px 15px;
+  border: 1px solid #f0dfd3 !important;
+  border-radius: 10px;
+  background: #fff8f0 !important;
+}
+
+.application-card .application-info .description {
+  white-space: pre-wrap;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.application-card .application-actions {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 8px;
+  min-width: 108px;
+  padding: 0 0 0 18px !important;
+  border: 0 !important;
+  border-left: 0 !important;
+  border-top: 0 !important;
+}
+
+.application-card .application-actions .status {
+  align-self: flex-end;
+  margin: 0 0 5px;
+}
+
+.application-card .application-actions .text-button {
+  min-height: 38px;
+  padding: 9px 14px;
+  border: 1px solid #ead5e2;
+  border-radius: 10px;
+  background: #fffaf6;
+  color: #381932;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.application-card .application-actions .text-button.danger {
+  color: #b42336;
+  border-color: #f0cbd0;
+}
+
+.application-card .resume-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+  padding-top: 13px;
+  border-top: 1px solid #f3e5dc;
+}
+
+@media (max-width: 900px) {
+  .application-card {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 14px;
+    padding: 19px !important;
+  }
+
+  .application-card .application-info,
+  .application-card .application-actions {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .application-card .application-actions {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 0;
+    padding: 13px 0 0 !important;
+    border-top: 1px solid #f3e5dc !important;
+  }
+
+  .application-card .application-actions .status {
+    align-self: center;
+    margin: 0 8px 0 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .application-card {
+    padding: 16px !important;
+  }
+
+  .application-card .application-info h3 {
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================================
+   JOBTRACK — FINAL APPLICATION CARD LAYOUT
+   One consistent override, placed last in the stylesheet.
+   ========================================================= */
+
+.application-list {
+  display: grid;
+  gap: 16px;
+}
+
+.application-card {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: start;
+  gap: 18px 24px;
+  padding: 24px !important;
+  border: 1px solid #f0dfd3 !important;
+  border-radius: 16px;
+  background: #fffdf9 !important;
+  box-shadow: 0 4px 16px rgba(56, 25, 50, 0.04) !important;
+  text-align: left !important;
+  min-width: 0;
+}
+
+.application-card .company-avatar {
+  display: none !important;
+}
+
+.application-card .application-info {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  min-width: 0;
+  text-align: left !important;
+  overflow-wrap: anywhere;
+}
+
+.application-card .application-info h3,
+.application-card .application-info p,
+.application-card .application-info small,
+.application-card .application-info details,
+.application-card .application-info summary,
+.application-card .application-info .description {
+  text-align: left !important;
+}
+
+.application-card .application-info h3 {
+  margin: 0 0 7px;
+  color: #381932;
+  font-size: 18px;
+  font-weight: 850;
+  line-height: 1.4;
+}
+
+.application-card .application-info > p:first-of-type {
+  margin: 0 0 9px;
+  color: #70405f;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.application-card .application-info > small {
+  display: block;
+  margin: 0 0 14px;
+  color: #9b8495;
+  font-size: 12px;
+}
+
+.application-card .application-info details {
+  margin: 14px 0 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 13px;
+}
+
+.application-card .application-info details[open] {
+  padding: 13px 15px;
+  border: 1px solid #f0dfd3;
+  border-radius: 10px;
+  background: #fff8f0;
+}
+
+.application-card .application-info summary {
+  color: #70405f;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.application-card .application-info .description {
+  margin-top: 10px;
+  color: #60465c;
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.application-card .application-info .description ul,
+.application-card .application-info .description ol {
+  padding-left: 22px;
+}
+
+.application-card .application-info > a {
+  display: inline-block;
+  margin: 8px 12px 0 0;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.application-card .application-info .resume-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #f3e5dc;
+}
+
+.application-card .resume-row a {
+  margin: 0;
+}
+
+.application-card .application-actions {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 9px;
+  min-width: 112px;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.application-card .application-actions .status {
+  align-self: flex-end;
+  margin: 0 0 5px;
+}
+
+.application-card .application-actions .text-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 38px;
+  padding: 9px 14px;
+  border: 1px solid #ead5e2;
+  border-radius: 10px;
+  background: #fffaf6;
+  color: #381932;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.application-card .application-actions .text-button:hover {
+  background: #f4e7ee;
+  border-color: #d9b9cd;
+}
+
+.application-card .application-actions .text-button.danger {
+  color: #b42336;
+  border-color: #f0cbd0;
+  background: #fffaf8;
+}
+
+.application-card .application-actions .text-button.danger:hover {
+  background: #fff0f0;
+  border-color: #e9aeb5;
+}
+
+@media (max-width: 900px) {
+  .application-card {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 14px;
+    padding: 19px !important;
+  }
+
+  .application-card .application-info,
+  .application-card .application-actions {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .application-card .application-actions {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    min-width: 0;
+    padding-top: 13px !important;
+    border-top: 1px solid #f3e5dc !important;
+  }
+
+  .application-card .application-actions .status {
+    align-self: center;
+    margin: 0 8px 0 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .application-card {
+    padding: 16px !important;
+    gap: 12px;
+  }
+
+  .application-card .application-info h3 {
+    font-size: 16px;
+  }
+
+  .application-card .application-actions {
+    gap: 8px;
+  }
+}
+
+/* ==================================
+   JobTrack — Professional Job Cards
+   ================================== */
+
+.application-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 145px;
+  gap: 18px 28px;
+  align-items: start;
+  padding: 26px 28px;
+  background: #fffaf6;
+  border: 1px solid #efded3;
+  border-radius: 18px;
+  box-shadow: 0 4px 14px rgba(56, 25, 50, 0.035);
+  text-align: left;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.application-card:hover {
+  border-color: #ddc3d2;
+  box-shadow: 0 8px 22px rgba(56, 25, 50, 0.06);
+}
+
+/* Hide the company initial */
+.application-card .company-avatar {
+  display: none !important;
+}
+
+/* Main company and job information */
+.application-card .application-info {
+  min-width: 0;
+  text-align: left;
+}
+
+.application-card .application-info h3 {
+  margin: 0 0 7px;
+  color: #381932;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.application-card .application-info > p {
+  margin: 0 0 9px;
+  color: #72566e;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.application-card .application-info > small {
+  display: block;
+  margin: 8px 0 16px;
+  color: #947f91;
+  text-align: left;
+}
+
+/* Description and interview information */
+.application-card details {
+  margin: 14px 0;
+  text-align: left;
+}
+
+.application-card details summary {
+  color: #72566e;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.application-card details .description {
+  margin-top: 12px;
+  color: #60465c;
+  line-height: 1.75;
+  text-align: left;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.application-card .interview-date {
+  margin: 12px 0;
+  color: #72566e;
+  font-size: 14px;
+  text-align: left;
+}
+
+/* Status and action column */
+.application-card .application-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 9px;
+  min-width: 0;
+  padding-left: 18px;
+  border-left: 1px solid #f0e1e8;
+}
+
+.application-card .application-actions .status {
+  align-self: flex-end;
+  margin-bottom: 5px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Compact, consistent action buttons */
+.application-card .application-actions button,
+.application-card .application-actions .text-button {
+  min-height: 38px;
+  padding: 9px 12px;
+  border: 1px solid #e8d3df;
+  border-radius: 10px;
+  background: #fffdfb;
+  color: #381932;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.application-card .application-actions button:hover,
+.application-card .application-actions .text-button:hover {
+  background: #f4e7ee;
+  border-color: #d9b8cb;
+}
+
+.application-card .application-actions .danger {
+  color: #bd293d;
+  border-color: #f0c9cf;
+}
+
+.application-card .application-actions .danger:hover {
+  background: #fff0f0;
+  border-color: #e9aeb7;
+}
+
+/* Resume area */
+.application-card .resume-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #f0e1d8;
+}
+
+.application-card .resume-row a {
+  color: #60405d;
+  font-size: 13px;
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+.application-card .resume-row button {
+  min-height: 38px;
+  padding: 9px 13px;
+  border: 1px solid #e4c7d8;
+  border-radius: 10px;
+  background: #fffaf6;
+  color: #381932;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+  .application-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    padding: 20px;
+  }
+
+  .application-card .application-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 14px 0 0;
+    border-left: none;
+    border-top: 1px solid #f0e1e8;
+  }
+
+  .application-card .application-actions .status {
+    align-self: center;
+    margin-right: auto;
+  }
+
+  .application-card .resume-row {
+    gap: 10px;
+  }
+}
+
+/* Custom delete confirmation modal */
+.delete-modal {
+  width: min(420px, calc(100vw - 32px));
+  padding: 30px;
+  border: 1px solid #ead5e2;
+  border-radius: 20px;
+  background: #fff3e6;
+  color: #381932;
+  box-shadow: 0 24px 70px rgba(30, 10, 27, 0.25);
+  text-align: center;
+  animation: deleteModalEnter 0.18s ease-out;
+}
+
+.delete-modal-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: #fde4e4;
+  color: #b42336;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.delete-modal h2 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.delete-modal p {
+  color: #72566e;
+  line-height: 1.65;
+}
+
+.delete-modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.delete-modal-actions button {
+  min-height: 44px;
+  padding: 11px 16px;
+  border-radius: 10px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cancel-button {
+  border: 1px solid #dfc4d4;
+  background: #fffaf6;
+  color: #381932;
+}
+
+.confirm-delete-button {
+  border: 1px solid #b42336;
+  background: #b42336;
+  color: white;
+}
+
+.delete-error {
+  color: #b42336 !important;
+}
+
+@keyframes deleteModalEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 450px) {
+  .delete-modal-actions {
+    flex-direction: column-reverse;
+  }
+}
+
+
+/* Custom delete confirmation modal */
+.delete-overlay {
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 20px;
+  background: rgba(35, 15, 32, 0.62);
+  backdrop-filter: blur(4px);
+}
+
+.delete-modal {
+  width: min(420px, calc(100vw - 32px));
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #ead5e2;
+  border-radius: 20px;
+  background: #fff3e6;
+  color: #381932;
+  box-shadow: 0 24px 70px rgba(30, 10, 27, 0.25);
+  text-align: center;
+  animation: deleteModalEnter 0.18s ease-out;
+}
+
+.delete-modal-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: #fde4e4;
+  color: #b42336;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.delete-modal h2 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.delete-modal p {
+  color: #72566e;
+  line-height: 1.65;
+}
+
+.delete-modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.delete-modal-actions button {
+  min-height: 44px;
+  padding: 11px 16px;
+  border-radius: 10px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cancel-button {
+  border: 1px solid #dfc4d4;
+  background: #fffaf6;
+  color: #381932;
+}
+
+.confirm-delete-button {
+  border: 1px solid #b42336;
+  background: #b42336;
+  color: #fff;
+}
+
+.delete-error {
+  color: #b42336 !important;
+}
+
+@keyframes deleteModalEnter {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 450px) {
+  .delete-modal-actions { flex-direction: column-reverse; }
+}
+
+
+/* =========================================================
+   JOBTRACK — WIDE INTERVIEW CALENDAR SIDEBAR
+   ========================================================= */
+.sidebar {
+  width: 340px;
+  flex: 0 0 340px;
+  padding: 28px 20px 18px;
+  gap: 14px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar .logo {
+  margin: 0 0 8px;
+  flex-shrink: 0;
+}
+
+.main-content {
+  width: calc(100% - 340px);
+  margin-left: 340px;
+}
+
+.sidebar-calendar {
+  width: 100%;
+  min-width: 0;
+  color: #fff3e6;
+}
+
+.calendar-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin: 4px 0 15px;
+}
+
+.calendar-heading h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 850;
+  color: #fff3e6;
+}
+
+.calendar-month-controls {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) 34px;
+  align-items: center;
+  gap: 7px;
+}
+
+.calendar-month-controls strong {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.calendar-month-controls button {
+  height: 32px;
+  border: 1px solid #684760;
+  border-radius: 9px;
+  background: #4b2a43;
+  color: #fff3e6;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.calendar-month-controls button:hover {
+  background: #68445e;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.calendar-weekdays {
+  margin-bottom: 7px;
+}
+
+.calendar-weekdays span {
+  text-align: center;
+  color: #d6bdce;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.calendar-day,
+.calendar-empty-day {
+  min-width: 0;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.calendar-day {
+  position: relative;
+  display: grid;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff3e6;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  padding: 0;
+  transition: background .15s ease, border-color .15s ease;
+}
+
+.calendar-day:hover {
+  background: #4b2a43;
+  border-color: #8c6682;
+}
+
+.calendar-day.has-interview {
+  border: 2px solid #f2b36d;
+  color: #fff3e6;
+  font-weight: 900;
+}
+
+.calendar-day.is-today {
+  box-shadow: inset 0 0 0 1px #fff3e6;
+}
+
+.calendar-day.is-selected {
+  background: #f2b36d;
+  color: #381932;
+  border-color: #f2b36d;
+  box-shadow: none;
+}
+
+.calendar-day.is-selected.has-interview {
+  box-shadow: 0 0 0 2px #f2b36d;
+  border-color: #381932;
+}
+
+.calendar-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 14px 0 18px;
+  color: #d6bdce;
+  font-size: 10px;
+}
+
+.calendar-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.calendar-legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-interview {
+  border: 2px solid #f2b36d;
+}
+
+.legend-today {
+  border: 1px solid #fff3e6;
+}
+
+.selected-interviews {
+  border-top: 1px solid #684760;
+  padding-top: 15px;
+}
+
+.selected-interviews h4 {
+  margin: 0 0 11px;
+  color: #fff3e6;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.calendar-empty-message {
+  margin: 0;
+  color: #d6bdce;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.calendar-interview-card {
+  padding: 12px;
+  margin: 0 0 9px;
+  border: 1px solid #684760;
+  border-radius: 11px;
+  background: #4b2a43;
+  overflow-wrap: anywhere;
+}
+
+.calendar-interview-card strong {
+  display: block;
+  color: #fff3e6;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.calendar-interview-card p {
+  margin: 5px 0 0;
+  color: #e0cbd9;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.calendar-interview-card small {
+  display: block;
+  margin-top: 7px;
+  color: #d6bdce;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.calendar-interview-card button {
+  margin-top: 10px;
+  padding: 7px 9px;
+  border: 1px solid #8c6682;
+  border-radius: 7px;
+  background: #fff3e6;
+  color: #381932;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.calendar-interview-card button:hover {
+  background: #f2b36d;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1100px) {
+  .sidebar {
+    width: 310px;
+    flex-basis: 310px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .main-content {
+    width: calc(100% - 310px);
+    margin-left: 310px;
+    padding: 30px 22px;
+  }
+
+  .calendar-grid {
+    gap: 3px;
+  }
+}
+
+@media (max-width: 700px) {
+  .app {
+    display: block;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    min-height: 0;
+    max-height: none;
+    padding: 18px;
+    border-bottom: 1px solid #684760;
+  }
+
+  .sidebar .logo {
+    margin-bottom: 8px;
+  }
+
+  .sidebar-calendar {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .main-content {
+    width: 100%;
+    margin-left: 0;
+    padding: 22px 14px;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+}
+
+
+/* JobTrack compact card footer — latest requested layout */
+.application-card {
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  column-gap: 22px;
+  row-gap: 12px;
+  padding: 20px 22px !important;
+}
+
+.application-card .application-info {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.application-card .application-actions {
+  grid-column: 2;
+  grid-row: 1;
+  align-items: flex-end;
+  min-width: 0;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.application-card .application-actions .status {
+  align-self: flex-end;
+  margin: 0;
+}
+
+.application-card-footer {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-width: 0;
+  padding-top: 12px;
+  border-top: 1px solid #f0e1d8;
+}
+
+.application-card .application-card-footer .resume-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.application-card-footer .resume-row a,
+.application-card-footer .resume-row button,
+.application-card-footer .resume-row label {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.application-card .application-card-footer .resume-row .secondary-button,
+.application-card .application-card-footer .resume-row .resume-link {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 10px;
+  border: 1px solid #e8d3df;
+  border-radius: 9px;
+  background: #fffaf6;
+  color: #381932;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.application-card-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+}
+
+.application-card-footer-actions > .text-button {
+  min-height: 34px;
+  padding: 7px 11px;
+  border: 1px solid #ead5e2;
+  border-radius: 9px;
+  background: #fffaf6;
+  color: #381932;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.application-card-footer-actions > .text-button.danger {
+  color: #b42336;
+  border-color: #f0cbd0;
+}
+
+.application-card-footer-actions .job-description-details {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 12px;
+}
+
+.application-card-footer-actions .job-description-details > summary {
+  list-style: none;
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 11px;
+  border: 1px solid #d9b9cd;
+  border-radius: 9px;
+  background: #f4e7ee;
+  color: #381932;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.application-card-footer-actions .job-description-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.application-card-footer-actions .job-description-details[open] {
+  position: relative;
+}
+
+.application-card-footer-actions .job-description-details[open] .description {
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  bottom: calc(100% + 8px);
+  width: min(520px, 70vw);
+  max-height: 280px;
+  overflow: auto;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid #ead5df;
+  border-radius: 12px;
+  background: #fffdf9;
+  box-shadow: 0 12px 32px rgba(56, 25, 50, 0.16);
+  color: #60465c;
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .application-card {
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    padding: 18px !important;
+  }
+
+  .application-card-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .application-card-footer-actions {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .application-card {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 12px;
+    padding: 16px !important;
+  }
+
+  .application-card .application-info,
+  .application-card .application-actions {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .application-card .application-actions {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .application-card .application-actions .status {
+    align-self: flex-start;
+  }
+
+  .application-card-footer {
+    grid-column: 1;
+  }
+
+  .application-card .application-card-footer .resume-row {
+    width: 100%;
+  }
+
+  .application-card-footer-actions .job-description-details[open] .description {
+    position: static;
+    width: 100%;
+    max-height: 240px;
+    margin-top: 8px;
+  }
+}
+
+
+/* JobTrack card controls: compact footer layout */
+.application-card {
+  grid-template-columns: 44px minmax(0, 1fr) auto !important;
+}
+.application-card .company-avatar { grid-column: 1; }
+.application-card .application-info { grid-column: 2; min-width: 0; }
+.application-card .application-actions { grid-column: 3; }
+.application-card .application-job-posting {
+  display: inline-block;
+  margin-top: 8px;
+  color: #60405d;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-size: 13px;
+}
+.application-card-footer .resume-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.application-card-footer .resume-row .job-description-details { margin: 0; }
+.application-card-footer .resume-row .job-description-details > summary {
+  list-style: none;
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 11px;
+  border: 1px solid #d9b9cd;
+  border-radius: 9px;
+  background: #f4e7ee;
+  color: #381932;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.application-card-footer .resume-row .job-description-details > summary::-webkit-details-marker { display: none; }
+.application-card-footer .resume-row .job-description-details[open] { position: relative; }
+.application-card-footer .resume-row .job-description-details[open] .description {
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  bottom: calc(100% + 8px);
+  width: min(520px, 70vw);
+  max-height: 280px;
+  overflow: auto;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid #ead5df;
+  border-radius: 12px;
+  background: #fffdf9;
+  box-shadow: 0 12px 32px rgba(56,25,50,.16);
+  color: #60465c;
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.application-card-footer-actions { margin-left: auto; }
+@media (max-width: 900px) {
+  .application-card { grid-template-columns: 44px minmax(0,1fr) auto !important; }
+}
+@media (max-width: 650px) {
+  .application-card { grid-template-columns: minmax(0,1fr) auto !important; }
+  .application-card .company-avatar { grid-column: 1; grid-row: 1; }
+  .application-card .application-info { grid-column: 1 / -1; }
+  .application-card .application-actions { grid-column: 2; grid-row: 1; }
+  .application-card .application-card-footer { grid-column: 1 / -1; }
+  .application-card-footer { align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
+  .application-card-footer-actions { margin-left: auto; }
+  .application-card-footer .resume-row .job-description-details[open] .description {
+    position: static; width: 100%; max-height: 240px; margin-top: 8px;
+  }
+}
+
+/* Final spacing refinements: align title to card padding and tighten date/link gap */
+.application-card .company-avatar {
+  display: none !important;
+}
+.application-card .application-info {
+  grid-column: 1 / -1 !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+.application-card .application-info h3,
+.application-card .application-info .role {
+  margin-left: 0 !important;
+}
+.application-card .application-info .application-date {
+  margin-bottom: 4px !important;
+}
+.application-card .application-job-posting {
+  margin-top: 2px !important;
+}
+@media (max-width: 650px) {
+  .application-card .application-info { grid-column: 1 / -1 !important; }
+}
+
+/* ===== JobTrack dashboard title — refreshed hero section ===== */
+.main-content > .page-header {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 170px;
+  margin: 0 0 26px;
+  padding: 27px clamp(22px, 3vw, 42px);
+  border: 1px solid rgba(106, 62, 96, 0.13);
+  border-radius: 24px;
+  background: linear-gradient(112deg, #fff9f1 0%, #f8eaf0 58%, #f1e1eb 100%);
+  box-shadow: 0 12px 32px rgba(56, 25, 50, 0.055);
+}
+
+.main-content > .page-header::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 220px;
+  height: 220px;
+  right: 7%;
+  top: -112px;
+  border: 1px solid rgba(95, 48, 83, 0.12);
+  border-radius: 50%;
+  box-shadow: 0 0 0 22px rgba(255,255,255,0.18), 0 0 0 45px rgba(255,255,255,0.12);
+}
+
+.main-content > .page-header::after {
+  content: "✦";
+  position: absolute;
+  right: clamp(28px, 5vw, 68px);
+  bottom: 16px;
+  color: rgba(106, 62, 96, 0.22);
+  font-size: 72px;
+  line-height: 1;
+  transform: rotate(12deg);
+}
+
+.main-content > .page-header > div {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.main-content > .page-header .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 12px;
+  padding: 7px 11px;
+  border: 1px solid rgba(106, 62, 96, 0.13);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  color: #805a78;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.7px;
+}
+
+.main-content > .page-header .eyebrow::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: #c27b9d;
+  box-shadow: 0 0 0 3px rgba(194, 123, 157, 0.14);
+}
+
+.main-content > .page-header h1 {
+  margin: 0;
+  color: #381932;
+  font-size: clamp(2.15rem, 3.5vw, 3.15rem);
+  font-weight: 900;
+  letter-spacing: -1.7px;
+  line-height: 1.06;
+}
+
+.main-content > .page-header .muted {
+  margin: 11px 0 0;
+  color: #795f75;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 650px) {
+  .main-content > .page-header {
+    min-height: 0;
+    margin-bottom: 20px;
+    padding: 23px 20px;
+    border-radius: 18px;
+  }
+
+  .main-content > .page-header h1 {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+    letter-spacing: -1.2px;
+  }
+
+  .main-content > .page-header .muted {
+    font-size: 13px;
+  }
+
+  .main-content > .page-header::before {
+    right: -100px;
+  }
+
+  .main-content > .page-header::after {
+    right: 18px;
+    bottom: 10px;
+    font-size: 48px;
+  }
+}
+
+
+/* AI job-description helper in the application form */
+.job-description-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.job-description-label {
+  font-weight: 750;
+}
+
+.description-ai-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.description-ai-hint {
+  color: #806d7c;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.improve-description-button {
+  border: 1px solid rgba(106, 62, 96, 0.2);
+  border-radius: 10px;
+  padding: 9px 13px;
+  background: #f7eaf3;
+  color: #633657;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.improve-description-button:hover:not(:disabled) {
+  background: #eed8e8;
+  transform: translateY(-1px);
+}
+
+.improve-description-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+
+
+/* FINAL FIX: Details stays beside View PDF and expands below in normal flow. */
+.application-card .application-card-footer {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  column-gap: 14px;
+  row-gap: 10px;
+}
+
+.application-card .application-card-footer > .resume-row {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.application-card .application-card-footer .job-description-details {
+  position: static !important;
+  display: block;
+  flex: 0 0 auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 12px;
+}
+
+.application-card .application-card-footer .job-description-details > summary {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 7px 11px;
+  border: 1px solid #d9b9cd;
+  border-radius: 9px;
+  background: #f4e7ee;
+  color: #381932;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.application-card .application-card-footer .job-description-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.application-card .application-card-footer .job-description-details[open] {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 0;
+}
+
+.application-card .application-card-footer .job-description-details[open] > .description {
+  position: static !important;
+  display: block;
+  width: 100%;
+  max-width: none;
+  max-height: none;
+  overflow: visible;
+  margin: 12px 0 0;
+  padding: 16px;
+  border: 1px solid #ead5df;
+  border-radius: 12px;
+  background: #fff8f0;
+  box-shadow: none;
+  color: #60465c;
+  font-size: 13px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .application-card .application-card-footer {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+}
+
+@media (max-width: 650px) {
+  .application-card .application-card-footer {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .application-card .application-card-footer > .resume-row {
+    width: 100%;
+  }
+
+  .application-card .application-card-footer > .application-card-footer-actions {
+    grid-column: 1;
+    justify-content: flex-start;
+    margin-left: 0;
+  }
+}
+
+/* Keep the Details button fixed beside View PDF */
+.application-card-footer .resume-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.application-card-footer .job-description-details {
+  position: static !important;
+  margin: 0;
+}
+
+.application-card-footer .job-description-details > summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 7px 11px;
+  border: 1px solid #d9b9cd;
+  border-radius: 9px;
+  background: #f4e7ee;
+  color: #381932;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* Show the description below the controls */
+.application-card-footer .job-description-details[open] {
+  display: contents;
+}
+
+.application-card-footer .job-description-details .description {
+  position: static !important;
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: 100%;
+  max-height: none;
+  overflow: visible;
+  margin: 12px 0 0;
+  padding: 16px;
+  border: 1px solid #ead5df;
+  border-radius: 12px;
+  background: #fff8f0;
+  box-shadow: none;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+
+/* Requested update: remove the dashboard hero/banner and keep card details aligned. */
+.main-content > .page-header {
+  display: none !important;
+}
+
+/* Every application footer spans the full card, not just the info grid column. */
+.application-card > .application-card-footer {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+}
+
+.application-card-footer .resume-row {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  flex: 1 1 auto !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+
+.application-card-footer .job-description-details[open] {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.application-card-footer .job-description-details[open] > .description {
+  grid-column: 1 / -1 !important;
+  justify-self: stretch !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 12px 0 0 !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 650px) {
+  .application-card > .application-card-footer {
+    flex-direction: column !important;
+  }
+}
+
+/* Stable application-card footer: controls on the left, Edit/Delete on the right. */
+.application-card > .application-card-footer {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: start !important;
+  justify-content: initial !important;
+  gap: 12px 16px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  grid-column: 1 / -1 !important;
+}
+
+.application-card-footer > .resume-row {
+  grid-column: 1 !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  flex: initial !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  width: auto !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+.application-card-footer > .application-card-footer-actions {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex-wrap: nowrap !important;
+  gap: 8px !important;
+  width: auto !important;
+  margin: 0 !important;
+}
+
+.application-card-footer .job-description-details {
+  position: static !important;
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+.application-card-footer .job-description-details[open] {
+  display: block !important;
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.application-card-footer .job-description-details[open] > .description {
+  position: static !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  max-height: none !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+  margin: 12px 0 0 !important;
+  text-align: left !important;
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+}
+
+/* Hide only the top hero/banner; leave the rest of the dashboard untouched. */
+.main-content > .page-header {
+  display: none !important;
+}
+
+@media (max-width: 650px) {
+  .application-card > .application-card-footer {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .application-card-footer > .resume-row {
+    grid-column: 1 !important;
+    width: 100% !important;
+  }
+
+  .application-card-footer > .application-card-footer-actions {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+  }
+}
+
+
+/* Keep the Details summary anchored beside View PDF when expanded.
+   The description grows below the controls; it must not move the summary or Edit/Delete. */
+.application-card-footer > .resume-row {
+  display: grid !important;
+  grid-template-columns: max-content max-content !important;
+  align-items: start !important;
+  justify-content: start !important;
+  gap: 8px !important;
+  width: 100% !important;
+}
+
+.application-card-footer > .resume-row > .job-description-details {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  align-self: start !important;
+  display: block !important;
+  position: relative !important;
+  width: max-content !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  flex: initial !important;
+}
+
+.application-card-footer > .resume-row > .job-description-details > summary {
+  display: list-item !important;
+  width: max-content !important;
+  max-width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.application-card-footer > .resume-row > .job-description-details[open] {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  width: max-content !important;
+  max-width: min(720px, calc(100vw - 320px)) !important;
+}
+
+.application-card-footer > .resume-row > .job-description-details[open] > .description {
+  position: static !important;
+  display: block !important;
+  width: min(720px, calc(100vw - 320px)) !important;
+  max-width: 100% !important;
+  margin: 12px 0 0 !important;
+  box-sizing: border-box !important;
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+}
+
+@media (max-width: 650px) {
+  .application-card-footer > .resume-row > .job-description-details[open] {
+    max-width: calc(100vw - 80px) !important;
+  }
+  .application-card-footer > .resume-row > .job-description-details[open] > .description {
+    width: calc(100vw - 80px) !important;
+  }
+}
+/* ===== JobTrack bubbly orange logo ===== */
+
+.sidebar .logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+  margin: 0 0 28px;
+  padding: 0 2px;
+
+  font-family: "Fredoka", "Nunito", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1.2px;
+  line-height: 1.2;
+
+  color: #F5B45F;
+}
+
+/* Rounded, bubbly lettering */
+.sidebar .logo .logo-text {
+  color: #F5B45F;
+  font-weight: 700;
+}
+
+/* Orange accent dot */
+.sidebar .logo .logo-dot {
+  color: #FFD08A;
+  font-weight: 700;
+}
+
+/* Keep the logo aligned on smaller screens */
+@media (max-width: 650px) {
+  .sidebar .logo {
+    font-size: 29px;
+    margin-bottom: 10px;
+  }
+}
+
+/* ===== JobTrack logo only: remove the orbit above the text ===== */
+.sidebar .logo.logo-reference {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: baseline !important;
+  justify-content: flex-start !important;
+  gap: 0 !important;
+  width: fit-content !important;
+  margin: 0 0 28px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  font-family: "Fredoka", "Nunito", sans-serif !important;
+  font-size: 42px !important;
+  font-weight: 700 !important;
+  letter-spacing: -1.8px !important;
+  line-height: 1.15 !important;
+  color: #fff3e6 !important;
+}
+.sidebar .logo.logo-reference::before,
+.sidebar .logo.logo-reference::after,
+.sidebar .logo.logo-reference .logo-job::before,
+.sidebar .logo.logo-reference .logo-job::after,
+.sidebar .logo.logo-reference .logo-track::before,
+.sidebar .logo.logo-reference .logo-track::after {
+  content: none !important;
+  display: none !important;
+}
+.sidebar .logo.logo-reference .logo-job {
+  color: #fff3e6 !important;
+  font: inherit !important;
+}
+.sidebar .logo.logo-reference .logo-track {
+  color: #f6a43b !important;
+  font: inherit !important;
+}
+@media (max-width: 650px) {
+  .sidebar .logo.logo-reference {
+    font-size: 38px !important;
+    margin-bottom: 20px !important;
+  }
+}
